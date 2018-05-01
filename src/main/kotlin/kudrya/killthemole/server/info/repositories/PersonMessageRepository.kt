@@ -1,6 +1,6 @@
-package kudrya.killthemole.info.repositories
+package kudrya.killthemole.server.info.repositories
 
-import kudrya.killthemole.info.struct.PersonMessage
+import kudrya.killthemole.server.info.struct.PersonMessage
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

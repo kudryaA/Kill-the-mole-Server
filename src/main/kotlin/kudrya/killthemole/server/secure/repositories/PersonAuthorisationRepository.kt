@@ -1,6 +1,6 @@
-package kudrya.killthemole.secure.repositories
+package kudrya.killthemole.server.secure.repositories
 
-import kudrya.killthemole.secure.entity.PersonAuthorisation
+import kudrya.killthemole.server.secure.entity.PersonAuthorisation
 import org.springframework.data.repository.CrudRepository
 import org.springframework.stereotype.Repository
 

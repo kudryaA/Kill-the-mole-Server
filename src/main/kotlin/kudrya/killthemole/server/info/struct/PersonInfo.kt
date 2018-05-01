@@ -1,4 +1,4 @@
-package kudrya.killthemole.info.struct
+package kudrya.killthemole.server.info.struct
 
 import com.google.gson.annotations.Expose
 import javax.persistence.Column

@@ -1,4 +1,4 @@
-package kudrya.killthemole.secure
+package kudrya.killthemole.server.secure
 
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration

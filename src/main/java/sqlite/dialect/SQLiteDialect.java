@@ -235,7 +235,7 @@ public class SQLiteDialect extends Dialect {
 
     @Override
     public boolean hasAlterTable() {
-        // As specified in NHibernate dialect
+        // As specified in NHibernate sqlite.dialect
         return false;
     }
 

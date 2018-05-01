@@ -1,4 +1,4 @@
-package kudrya.killthemole
+package kudrya.killthemole.server
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

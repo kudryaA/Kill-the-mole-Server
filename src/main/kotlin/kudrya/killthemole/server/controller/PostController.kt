@@ -1,9 +1,10 @@
-package kudrya.killthemole.controller
+package kudrya.killthemole.server.controller
 
 import com.google.gson.GsonBuilder
-import kudrya.killthemole.info.dao.PersonInfoDatabaseController
-import kudrya.killthemole.info.dao.PersonMessageDatabaseController
-import kudrya.killthemole.secure.SecureController
+import kudrya.killthemole.server.info.dao.PersonInfoDatabaseController
+import kudrya.killthemole.server.info.dao.PersonMessageDatabaseController
+import kudrya.killthemole.server.secure.SecureController
+import org.apache.log4j.Logger
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation.RequestMapping
@@ -22,6 +23,11 @@ class PostController {
     @Autowired
     private lateinit var secureConfig: SecureController
 
+    companion object {
+        private val logger = Logger.getLogger(PostController::class.java)
+    }
+
+
     @RequestMapping(method = [(RequestMethod.POST)])
     @ResponseBody
     fun index(): String {
@@ -35,6 +41,7 @@ class PostController {
     fun showInfo(@RequestParam(value="login", required=true, defaultValue="login") login: String): String {
         val person = infoDatabase[login]
         return if (person == null) {
+            logger.warn("Info about not exist user with $login")
             "error"
         } else {
             val gson = GsonBuilder().setPrettyPrinting().create()
@@ -52,6 +59,7 @@ class PostController {
             messageDatabase[login] = 0
             "success"
         } else {
+            logger.warn("Error authorisation login=$login password=$password")
             "error"
         }
     }
@@ -60,9 +68,10 @@ class PostController {
     @ResponseBody
     fun check(@RequestParam(value="login", required=true, defaultValue="login") login: String,
                    @RequestParam(value="password", required=true, defaultValue="password") password: String): String {
-        return if (secureConfig.check(login, password)) { 0
+        return if (secureConfig.check(login, password)) {
             "success"
         } else {
+            logger.warn("Error authorisation login=$login password=$password")
             "error"
         }
     }
@@ -74,13 +83,14 @@ class PostController {
                    @RequestParam(value="password", required=true, defaultValue="password") password: String): String {
         return if (secureConfig.check(login, password)) {
             val person = messageDatabase[login]
-            if (person == null)
+            if (person == null) {
                 "error"
-            else {
+            } else {
                 val gson = GsonBuilder().setPrettyPrinting().create()
                 gson.toJson(person)
             }
         } else {
+            logger.warn("Error authorisation login=$login password=$password")
             "error"
         }
     }
@@ -90,9 +100,10 @@ class PostController {
     fun sendMessage(@RequestParam(value="login", required=true, defaultValue="login") login: String): String {
         messageDatabase[login] = 1
         val person = messageDatabase[login]
-        return if (person == null)
+        return if (person == null) {
+            logger.warn("Send request for not exist user with $login")
             "error"
-        else {
+        } else {
             val gson = GsonBuilder().setPrettyPrinting().create()
             gson.toJson(person)
         }

@@ -1,7 +1,7 @@
-package kudrya.killthemole.info.dao
+package kudrya.killthemole.server.info.dao
 
-import kudrya.killthemole.info.repositories.PersonMessageRepository
-import kudrya.killthemole.info.struct.PersonMessage
+import kudrya.killthemole.server.info.repositories.PersonMessageRepository
+import kudrya.killthemole.server.info.struct.PersonMessage
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

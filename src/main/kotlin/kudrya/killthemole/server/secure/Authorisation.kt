@@ -1,7 +1,7 @@
-package kudrya.killthemole.secure
+package kudrya.killthemole.server.secure
 
-import kudrya.killthemole.secure.hash.Hash
-import kudrya.killthemole.secure.hash.MDA5Hash
+import kudrya.killthemole.server.secure.hash.Hash
+import kudrya.killthemole.server.secure.hash.MDA5Hash
 
 class Authorisation(correct: String, current: String) {
     private val hash: Hash = MDA5Hash(current)

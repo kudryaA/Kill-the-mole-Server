@@ -1,4 +1,4 @@
-package kudrya.killthemole.secure.hash
+package kudrya.killthemole.server.secure.hash
 
 import javax.xml.bind.DatatypeConverter
 import java.security.MessageDigest

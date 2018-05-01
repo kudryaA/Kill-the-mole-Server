@@ -1,7 +1,7 @@
-package kudrya.killthemole.secure.dao
+package kudrya.killthemole.server.secure.dao
 
-import kudrya.killthemole.secure.entity.PersonAuthorisation
-import kudrya.killthemole.secure.repositories.PersonAuthorisationRepository
+import kudrya.killthemole.server.secure.entity.PersonAuthorisation
+import kudrya.killthemole.server.secure.repositories.PersonAuthorisationRepository
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

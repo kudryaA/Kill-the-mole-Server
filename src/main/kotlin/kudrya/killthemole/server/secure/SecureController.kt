@@ -1,6 +1,6 @@
-package kudrya.killthemole.secure
+package kudrya.killthemole.server.secure
 
-import kudrya.killthemole.secure.dao.PersonAuthorisationDatabaseController
+import kudrya.killthemole.server.secure.dao.PersonAuthorisationDatabaseController
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 

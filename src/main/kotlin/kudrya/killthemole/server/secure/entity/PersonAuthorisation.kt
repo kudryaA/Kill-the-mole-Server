@@ -1,4 +1,4 @@
-package kudrya.killthemole.secure.entity
+package kudrya.killthemole.server.secure.entity
 
 import javax.persistence.*
 

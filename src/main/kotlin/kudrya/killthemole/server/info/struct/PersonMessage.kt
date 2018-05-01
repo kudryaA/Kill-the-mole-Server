@@ -1,4 +1,4 @@
-package kudrya.killthemole.info.struct
+package kudrya.killthemole.server.info.struct
 
 import javax.persistence.Column
 import javax.persistence.Entity
